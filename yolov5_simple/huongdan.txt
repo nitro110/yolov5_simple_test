@@ -1,0 +1,16 @@
+B1: # Cài đặt môi trường python 3.9
+
+B2: # Update pip
+$py -m pip install --upgrade pip
+
+B3: #Cài đặt các modul
+$ pip install -r requirements.txt
+
+B4: # Ta phai train data from coco128.ymal
+$ python train.py --img 640 --batch 16 --epochs 3 --data coco128.yaml --weights yolov5s.pt
+
+B5: # Test detect data tư folder data/images với yolov5s
+$ python detect.py --source data/images --weights yolov5s.pt --conf 0.25
+
+B5: # Test  detect cam
+$ python detect.py --source 0 --weights yolov5s.pt --conf 0.25
